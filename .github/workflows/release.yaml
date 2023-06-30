@@ -48,10 +48,6 @@ jobs:
               run: poetry build
             - name: Create new documentation
               run: poetry run pdoc --html -o docs src/codeflare_sdk && pushd docs && rm -rf cluster job utils && mv codeflare_sdk/* . && rm -rf codeflare_sdk && popd
-            - name: Set Pypi token
-              run: poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
-            - name: Publish new release to Pypi repository
-              run: poetry publish
 
             - name: Commit changes in docs
               uses: stefanzweifel/git-auto-commit-action@v4
