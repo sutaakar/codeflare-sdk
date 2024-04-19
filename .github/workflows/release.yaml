@@ -20,7 +20,7 @@ jobs:
                 gh workflow run odh-notebooks-sync.yml \
                   --repo sutaakar/codeflare-sdk \
                   --ref main \
-                  --field upstream-repository-organization=opendatahub-io
+                  --field upstream-repository-organization=opendatahub-io \
                   --field codeflare-repository-organization=${{ github.event.inputs.project-codeflare }} \
                   --field codeflare_sdk_release_version=${{ github.event.inputs.release-version }}
               shell: bash
